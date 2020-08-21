@@ -1,0 +1,2 @@
+# LBP
+Yerel İkili Örüntüler
