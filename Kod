@@ -1,0 +1,16 @@
+function sinyal=lbp(in)
+sinyal=sin(rand(1,1536).*pi/2);
+histo=zeros(1,256);
+for i=1:length(sinyal)-8;
+    blok=sinyal(i:i+8);
+    md=mean(blok);
+    sayac=1;
+    ozel(i)=0;
+    for k=1:9
+        if k~=5
+            ozel(i)=ozel(i)+(blok(k)>=md)*2^(8-sayac);
+            sayac=sayac+1;
+        end 
+    end
+    histo(ozel(i)+1)=histo(ozel(i)+1)+1;
+end
